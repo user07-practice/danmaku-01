@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<p id="test-message">HTMLは読み込まれています</p>
 <div id="game-container">
 
     <canvas id="gameCanvas"
@@ -21,7 +21,7 @@
     <div id="side-panel">
 
         <h2>PLAYER</h2>
-        <div id="lives">❤️ ❤️ ❤️</div>
+        <div id="livesDisplay"></div>
 
         <h2>SPELL CARD</h2>
         <div id="spells">✨ ✨</div>
@@ -29,6 +29,30 @@
     </div>
 
 </div>
+
+<!-- ============================== -->
+<!-- ボス会話ウィンドウ -->
+<!-- ============================== -->
+
+<div id="dialogue-container" style="display: none;">
+
+    <div id="dialogue-name">
+        ？？？
+    </div>
+
+    <div id="dialogue-text">
+        ...
+    </div>
+
+    <div id="dialogue-next">
+        ▼ Enterで次へ
+    </div>
+
+</div>
+
+<script>
+    console.log("index.htmlのスクリプトが実行されました");
+</script>
 
 <script type="module" src="/js/main.js"></script>
 

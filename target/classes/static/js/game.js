@@ -131,36 +131,6 @@ class Game {
 
 
     // =========================
-    // 自機弾発射
-    // =========================
-
-    shootPlayerBullets() {
-
-        // Java版では6フレームごと
-        if (this.frame % 6 !== 0) {
-            return;
-        }
-
-        const px = this.player.pos.x;
-        const py = this.player.pos.y;
-
-        // 左
-        this.playerBullets.push({
-            x: px - 15,
-            y: py - 10,
-            speed: 12.0
-        });
-
-        // 右
-        this.playerBullets.push({
-            x: px + 15,
-            y: py - 10,
-            speed: 12.0
-        });
-    }
-
-
-    // =========================
     // 描画
     // =========================
 

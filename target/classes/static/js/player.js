@@ -35,6 +35,25 @@ export class Player {
         this.spellClearRadius = 150;
     }
 
+// ==============================
+// 残機を減らす
+// ==============================
+
+    takeDamage() {
+
+        this.lives--;
+
+        if (this.lives < 0) {
+            this.lives = 0;
+        }
+
+        console.log(
+            "ダメージ！残機:",
+            this.lives
+        );
+
+    }
+
     update() {
 
         if (this.isFrozen) {

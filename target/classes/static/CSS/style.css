@@ -48,3 +48,71 @@ body {
 
     margin-bottom: 60px;
 }
+
+/* ============================== */
+/* ボス会話ウィンドウ */
+/* ============================== */
+
+#dialogue-container {
+
+    position: relative;
+
+    width: 440px;
+
+    margin: 10px auto 0 auto;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    background: rgba(20, 10, 40, 0.95);
+
+    border: 2px solid #b58cff;
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-family: sans-serif;
+
+}
+
+/* 話者名 */
+
+#dialogue-name {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: #d8b4ff;
+
+    margin-bottom: 10px;
+
+}
+
+/* セリフ */
+
+#dialogue-text {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    min-height: 65px;
+
+}
+
+/* 次へ表示 */
+
+#dialogue-next {
+
+    text-align: right;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    color: #c8b8e8;
+
+}
