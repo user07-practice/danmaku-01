@@ -25,6 +25,48 @@ let frame = 0;
 let isGameOver = false;
 
 // ==============================
+// 会話システム
+// ==============================
+
+const dialogues = [
+
+    {
+        speaker: "お嬢さん",
+        text: "ふぁっ……眠い……誰ぇ……？"
+    },
+
+    {
+        speaker: "主人公",
+        text: "あ、お前かお菓子ぽろぽろ落とすなよ"
+    },
+
+    {
+        speaker: "主人公",
+        text: "赤ちゃんか？"
+    },
+
+    {
+        speaker: "お嬢さん",
+        text: "？お菓子食べたいの……？えーっと"
+    },
+
+    {
+        speaker: "お嬢さん",
+        text: "グミ、食べるぅ？ はいどうぞー……zzzz"
+    },
+
+    {
+        speaker: "主人公",
+        text: "寝るなーー！！"
+    }
+
+];
+
+let dialogueIndex = 0;
+
+let isDialogueActive = false;
+
+// ==============================
 // 残機表示
 // ==============================
 
@@ -253,46 +295,21 @@ function update() {
 
         }
 
-        // ==============================
-// 会話システム
-// ==============================
-
-        const dialogues = [
-
-            {
-                speaker: "？？？",
-                text: "よくここまで来たわね。"
-            },
-
-            {
-                speaker: "プレイヤー",
-                text: "あなたがこの異変の原因なの？"
-            },
-
-            {
-                speaker: "？？？",
-                text: "ふふっ、そう簡単には教えられないわ。"
-            },
-
-            {
-                speaker: "プレイヤー",
-                text: "なら、力ずくで聞くまでよ！"
-            }
-
-        ];
-
-        let dialogueIndex = 0;
-        let isDialogueActive = false;
-
         function startDialogue() {
+
+            console.log("startDialogue() 実行！");
 
             isDialogueActive = true;
 
             dialogueIndex = 0;
 
-            document.getElementById(
+            const container = document.getElementById(
                 "dialogue-container"
-            ).style.display = "block";
+            );
+
+            console.log("会話ウィンドウ:", container);
+
+            container.style.display = "block";
 
             showDialogue();
 
@@ -302,6 +319,8 @@ function update() {
 
             const dialogue = dialogues[dialogueIndex];
 
+            console.log("表示する会話:", dialogue);
+
             document.getElementById(
                 "dialogue-name"
             ).textContent = dialogue.speaker;
@@ -309,6 +328,26 @@ function update() {
             document.getElementById(
                 "dialogue-text"
             ).textContent = dialogue.text;
+
+        }
+
+        function nextDialogue() {
+
+            if (!isDialogueActive) {
+                return;
+            }
+
+            dialogueIndex++;
+
+            if (dialogueIndex >= dialogues.length) {
+
+                endDialogue();
+
+                return;
+
+            }
+
+            showDialogue();
 
         }
 
